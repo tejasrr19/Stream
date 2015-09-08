@@ -1,0 +1,46 @@
+{
+    "name": "Stream",
+    "description": "",
+    "version": "0.0.1",
+    "main": "./Stream.js",
+    "author": {
+        "name": "tejasrao",
+        "email": "you@email.example"
+    },
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "express": "*",
+        "twitter": "*",
+        "socket.io": "*",
+        "express-handlebars": "*",
+        "mongoose": "*",
+        "react": "*",
+        "node-jsx": "*",
+        "ntwitter": "*"
+    },
+    "devDependencies": {
+        "browserify": "~6.0.3",
+        "nodemon": "^1.2.1",
+        "reactify": "~0.14.0",
+        "uglify-js": "~2.4.15",
+        "watchify": "~2.0.0"
+    },
+    "keywords": [],
+    "licenses": {
+        "type": "none"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/YOUR_LOGIN/Stream.git"
+    },
+    "bugs": {
+        "url": "http://github.com/YOUR_LOGIN/Stream/issues"
+    },
+    "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
