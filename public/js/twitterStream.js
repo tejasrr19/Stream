@@ -27,16 +27,13 @@ function initialize() {
   if(io !== undefined) {
     // Storage for WebSocket connections
     var socket = io.connect('http://localhost:8081/');
-
-    // This listens on the "twitter-steam" channel and data is 
-    // received everytime a new tweet is receieved.
     socket.on('twitter-stream', function (data) {
 
       //Add tweet to the heat map array.
       var tweetLocation = new google.maps.LatLng(data.lng,data.lat);
       liveTweets.push(tweetLocation);
       
-      //Flash a dot onto the map quickly
+      //Flash a image onto the map
       var image = "css/favicon-twitter.png";
       var marker = new google.maps.Marker({
         position: tweetLocation,
@@ -61,9 +58,7 @@ function initialize() {
     // Listens for a success response from the server to 
     // say the connection was successful.
     socket.on("connected", function(r) {
-
-      //Now that we are connected to the server let's tell 
-      //the server we are ready to start receiving tweets.
+      
       socket.emit("start tweets");
     });
   }
